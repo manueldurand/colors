@@ -12,13 +12,22 @@ main {
     margin: auto;
 }
 
-h1 {
+.hide {
+    display: none;
+}
+
+h1, h3 {
     margin-top: 1em;
     width: 100%;
     text-align: center;
 }
-.container {
-    margin-top: 50px;
+.res-container {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+.game-container {
+
     width: 100%;
     display: grid;
     grid-template-areas: "line_10"
@@ -32,6 +41,20 @@ h1 {
                         "line_2"
                         "line_1";
 }
+.separator {
+    margin-top: 50px;
+    padding: 0.5em;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+button {
+    margin: 0 1em;
+    padding: 0.5em;
+    height: 30px;
+    text-align: center;
+}
 .round {
     height: 25px;
     width: 25px;
@@ -41,8 +64,27 @@ h1 {
     margin: 0 0.5em;
 
 }
+.dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: brown;
+    margin: 0 0.5em;
+}
+.res {
+    margin-left: 50px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
 .line {
     margin-left: 50px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.line_0 {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
@@ -85,5 +127,76 @@ h1 {
 }
 .line_10 {
     grid-area: line_10;
+
+}
+.colors-container {
+    margin-top: 50px;
+    justify-content: space-evenly;
+    margin-left: 0;
+}
+#red, .red {
+    background-color: red;
+}
+#purple, .purple{
+    background-color: purple;
+}
+#yellow, .yellow {
+    background-color: yellow;
+}
+#orange, .orange {
+    background-color: #ff8f00;
+}
+#blue, .blue {
+    background-color: blue;
+}
+#green, .green {
+    background-color: green;
+}
+.colors, button {
+    cursor: pointer;
+}
+.hidden {
+    background-color: brown;
+}
+.white {
+    background-color: #fff;
+}
+.black {
+    background-color: black;
+}
+
+@media (max-width: 450px) {
+    
+    main {
+
+        width: 100vw;
+        height: 100vh;
+    }
+    .line {
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    .round {
+        height: 21px;
+        width: 21px;
+    }
+    .dot {
+        height: 7px;
+        width: 7px;
+    }
+    .res {
+        margin-left: 30px;
+        margin-top: 2px;
+    }
+    .separator {
+        margin-bottom: 30px;
+    }
+    button {
+        font-size: 10px;
+    }
+    .colors-container {
+        justify-content: space-evenly;
+        margin-left: 0;
+    }
 
 }

@@ -1,76 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mastermind game, Author: Manuel Durand">
     <link rel="stylesheet" href="style.css">
     <title>Mastermind</title>
 </head>
+<script src="https://code.jquery.com/jquery-3.7.0.js" 
+integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" 
+crossorigin="anonymous"></script>
 <body>
     <main>
-        <h1>Master mind</h1>
-        <div class="container">
-            <div class=" line line_1" id="line_1">
-                <span class="round" id="1_1"></span>
-                <span class="round" id="1_2"></span>
-                <span class="round" id="1_3"></span>
-                <span class="round" id="1_4"></span>
+        <div class="" id="game-container">
+            <h1>Master mind</h1>
+            <div class="res-container">
+                <div class="line_0" id="line_0">
+                    <span class="round hidden" id="0_1"></span>
+                    <span class="round hidden" id="0_2"></span>
+                    <span class="round hidden" id="0_3"></span>
+                    <span class="round hidden" id="0_4"></span>
+                </div>
             </div>
-            <div class="line line_2" id="line_2">
-                <span class="round" id="2_1"></span>
-                <span class="round" id="2_2"></span>
-                <span class="round" id="2_3"></span>
-                <span class="round" id="2_4"></span>
+            <h3 id="message"></h3>
+            <div class="game-container">
+                <div class=" line line_1" id="line_1">
+                    <span class="round" id="1_1"></span>
+                    <span class="round" id="1_2"></span>
+                    <span class="round" id="1_3"></span>
+                    <span class="round" id="1_4"></span>
+                    <div class="res">
+                        <span class="dot" id="1_1_1"></span>
+                        <span class="dot" id="1_1_2"></span>
+                        <span class="dot" id="1_1_3"></span>
+                        <span class="dot" id="1_1_4"></span>
+                    </div>
+                </div>
+                <div class="line line_2" id="line_2">
+                    <span class="round" id="2_1"></span>
+                    <span class="round" id="2_2"></span>
+                    <span class="round" id="2_3"></span>
+                    <span class="round" id="2_4"></span>
+                    <div class="res">
+                        <span class="dot" id="2_1_1"></span>
+                        <span class="dot" id="2_1_2"></span>
+                        <span class="dot" id="2_1_3"></span>
+                        <span class="dot" id="2_1_4"></span>
+                    </div>
+                </div>
+                <div class="line line_3" id="line_3">
+                    <span class="round" id="3_1"></span>
+                    <span class="round" id="3_2"></span>
+                    <span class="round" id="3_3"></span>
+                    <span class="round" id="3_4"></span>
+                    <div class="res">
+                        <span class="dot" id="3_1_1"></span>
+                        <span class="dot" id="3_1_2"></span>
+                        <span class="dot" id="3_1_3"></span>
+                        <span class="dot" id="3_1_4"></span>
+                    </div>
+                </div>
+                <div class="line line_4" id="line_4">
+                    <span class="round" id="4_1"></span>
+                    <span class="round" id="4_2"></span>
+                    <span class="round" id="4_3"></span>
+                    <span class="round" id="4_4"></span>
+                    <div class="res">
+                        <span class="dot" id="4_1_1"></span>
+                        <span class="dot" id="4_1_2"></span>
+                        <span class="dot" id="4_1_3"></span>
+                        <span class="dot" id="4_1_4"></span>
+                    </div>
+                </div>
+                <div class="line line_5" id="line_5">
+                    <span class="round" id="5_1"></span>
+                    <span class="round" id="5_2"></span>
+                    <span class="round" id="5_3"></span>
+                    <span class="round" id="5_4"></span>
+                    <div class="res">
+                        <span class="dot" id="5_1_1"></span>
+                        <span class="dot" id="5_1_2"></span>
+                        <span class="dot" id="5_1_3"></span>
+                        <span class="dot" id="5_1_4"></span>
+                    </div>
+                </div>
+                <div class="line line_6" id="line_6">
+                    <span class="round" id="6_1"></span>
+                    <span class="round" id="6_2"></span>
+                    <span class="round" id="6_3"></span>
+                    <span class="round" id="6_4"></span>
+                    <div class="res">
+                        <span class="dot" id="6_1_1"></span>
+                        <span class="dot" id="6_1_2"></span>
+                        <span class="dot" id="6_1_3"></span>
+                        <span class="dot" id="6_1_4"></span>
+                    </div>
+                </div>
+                <div class="line line_7" id="line_7">
+                    <span class="round" id="7_1"></span>
+                    <span class="round" id="7_2"></span>
+                    <span class="round" id="7_3"></span>
+                    <span class="round" id="7_4"></span>
+                    <div class="res">
+                        <span class="dot" id="7_1_1"></span>
+                        <span class="dot" id="7_1_2"></span>
+                        <span class="dot" id="7_1_3"></span>
+                        <span class="dot" id="7_1_4"></span>
+                    </div>
+                </div>
+                <div class="line line_8" id="line_8">
+                    <span class="round" id="8_1"></span>
+                    <span class="round" id="8_2"></span>
+                    <span class="round" id="8_3"></span>
+                    <span class="round" id="8_4"></span>
+                    <div class="res">
+                        <span class="dot" id="8_1_1"></span>
+                        <span class="dot" id="8_1_2"></span>
+                        <span class="dot" id="8_1_3"></span>
+                        <span class="dot" id="8_1_4"></span>
+                    </div>
+                </div>
+                <div class="line line_9" id="line_9">
+                    <span class="round" id="9_1"></span>
+                    <span class="round" id="9_2"></span>
+                    <span class="round" id="9_3"></span>
+                    <span class="round" id="9_4"></span>
+                    <div class="res">
+                        <span class="dot" id="9_1_1"></span>
+                        <span class="dot" id="9_1_2"></span>
+                        <span class="dot" id="9_1_3"></span>
+                        <span class="dot" id="9_1_4"></span>
+                    </div>
+                </div>
+                <div class="line line_10" id="line_10">
+                    <span class="round" id="10_1"></span>
+                    <span class="round" id="10_2"></span>
+                    <span class="round" id="10_3"></span>
+                    <span class="round" id="10_4"></span>
+                    <div class="res">
+                        <span class="dot" id="10_1_1"></span>
+                        <span class="dot" id="10_1_2"></span>
+                        <span class="dot" id="10_1_3"></span>
+                        <span class="dot" id="10_1_4"></span>
+                    </div>
+                </div>
             </div>
-            <div class="line line_3" id="line_3">
-                <span class="round" id="3_1"></span>
-                <span class="round" id="3_2"></span>
-                <span class="round" id="3_3"></span>
-                <span class="round" id="3_4"></span>
+            <div class="separator">
+                <button type="submit" class="green" id="go">envoyer</button>
+                <button type="reset" class="red" id="unset">annuler</button>
+                <button class="orange" id="new">nouveau jeu</button>
             </div>
-            <div class="line line_4" id="line_4">
-                <span class="round" id="4_1"></span>
-                <span class="round" id="4_2"></span>
-                <span class="round" id="4_3"></span>
-                <span class="round" id="4_4"></span>
+            <div class="colors-container line">
+                <span class="round colors" id="red"></span>
+                <span class="round colors" id="orange"></span>
+                <span class="round colors" id="yellow"></span>
+                <span class="round colors" id="purple"></span>
+                <span class="round colors" id="blue"></span>
+                <span class="round colors" id="green"></span>
             </div>
-            <div class="line line_5" id="line_5">
-                <span class="round" id="5_1"></span>
-                <span class="round" id="5_2"></span>
-                <span class="round" id="5_3"></span>
-                <span class="round" id="5_4"></span>
+            <div>
+                <button id="scores">scores</button>
             </div>
-            <div class="line line_6" id="line_6">
-                <span class="round" id="6_1"></span>
-                <span class="round" id="6_2"></span>
-                <span class="round" id="6_3"></span>
-                <span class="round" id="6_4"></span>
-            </div>
-            <div class="line line_7" id="line_7">
-                <span class="round" id="7_1"></span>
-                <span class="round" id="7_2"></span>
-                <span class="round" id="7_3"></span>
-                <span class="round" id="7_4"></span>
-            </div>
-            <div class="line line_8" id="line_8">
-                <span class="round" id="8_1"></span>
-                <span class="round" id="8_2"></span>
-                <span class="round" id="8_3"></span>
-                <span class="round" id="8_4"></span>
-            </div>
-            <div class="line line_9" id="line_9">
-                <span class="round" id="9_1"></span>
-                <span class="round" id="9_2"></span>
-                <span class="round" id="9_3"></span>
-                <span class="round" id="9_4"></span>
-            </div>
-            <div class="line line_10" id="line_10">
-                <span class="round" id="10_1"></span>
-                <span class="round" id="10_2"></span>
-                <span class="round" id="10_3"></span>
-                <span class="round" id="10_4"></span>
+        </div>
+        <div class="hide" id="scores-container">
+            <h1>SCORES</h1>
+            <button id="game">Jouer</button>
+            <div id="liste">
+
             </div>
         </div>
     </main>
+    <script src="main.js"></script>
 </body>
+
 </html>
