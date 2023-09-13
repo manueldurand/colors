@@ -17,7 +17,7 @@ let line = 0;
 let item = 1;
 
 
-chooseRandom(); // choisit une combinaison de couleurs et stocke nas 'solution'
+chooseRandom(); // choisit une combinaison de couleurs et stocke dans 'solution'
 tryALine();
 newTry();
 
@@ -153,6 +153,7 @@ function printResultats() {
   });
 }
 
+// efface la ligne en cours
 unset.addEventListener('click', e => {
   item = 1;
   essai.forEach(element => {
@@ -164,6 +165,7 @@ unset.addEventListener('click', e => {
   item = 1;
 })
 
+// réinitialise l'affichage et relance un nouveau jeu au clic sur le bouton Nouveau Jeu
 newGame.addEventListener('click', e => {
   essai = [];
   for (line = 1; line <= 10; line++) {
